@@ -1,0 +1,307 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_CLOCK DIALOGEX 0, 0, 170, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DLG_SETUP DIALOGEX 0, 0, 227, 129
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置时间"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "应用",IDOK_APPLY,146,105,52,17
+    EDITTEXT        IDC_EDIT_YEAR,39,30,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HOUR,37,70,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MONTH,101,31,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MINUTE,101,70,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DAY,162,31,40,14,ES_AUTOHSCROLL
+    LTEXT           "年",IDC_STATIC,18,34,9,8
+    LTEXT           "月",IDC_STATIC,82,34,9,8
+    LTEXT           "日",IDC_STATIC,142,33,9,8
+    LTEXT           "分",IDC_STATIC,83,73,9,8
+    LTEXT           "时",IDC_STATIC,16,73,9,8
+END
+
+IDD_DLG_CALENDAR DIALOGEX 0, 0, 339, 226
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "+",IDC_BTN_YEARUP,7,7,19,9
+    PUSHBUTTON      "-",IDC_BTN_YEARDOWN,75,7,19,9
+    PUSHBUTTON      "+",IDC_BTN_MONTHUP,149,7,19,9
+    PUSHBUTTON      "-",IDC_BTN_MONTHDOWN,215,7,19,9
+    PUSHBUTTON      "今日",IDC_BTN_TODAY,105,7,34,14
+    PUSHBUTTON      "×",IDCANCEL,326,1,12,11,BS_FLAT
+    COMBOBOX        IDC_MONTH,167,7,48,110,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_YEAR,29,7,48,110,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_MEM DIALOGEX 0, 0, 233, 254
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "纪念日"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COM1,14,30,36,97,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "名称",IDC_STATIC,51,32,21,11
+    COMBOBOX        IDC_COMBO_YEAR,60,55,40,68,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_MONTH,115,55,23,136,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DAY,153,55,23,165,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_MEM,75,30,107,13,ES_AUTOHSCROLL
+    LTEXT           "年",IDC_STATIC,104,58,9,8
+    LTEXT           "日",IDC_STATIC,180,58,9,8
+    LTEXT           "月",IDC_STATIC,141,58,9,8
+    COMBOBOX        IDC_COM2,15,55,40,74,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COM3,15,86,41,66,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_MINUTE,117,86,29,135,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_HOUR,77,86,29,136,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",IDC_ADD,189,37,37,52
+    LTEXT           "时",IDC_STATIC,107,89,9,8
+    LTEXT           "分",IDC_STATIC,148,89,9,8
+    LISTBOX         IDC_MEM_SHOW,14,110,169,130,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删除",IDC_MEM_DELETE,198,144,28,13
+    LTEXT           "也可双击选项删除",IDC_STATIC,191,115,35,23
+END
+
+DLG_ALARM DIALOGEX 0, 0, 233, 183
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "闹铃"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_ALARM_HOUR,27,21,48,91,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ALARM_MINUTE,107,21,48,91,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "时",IDC_STATIC,79,24,9,8
+    LTEXT           "分",IDC_STATIC,159,24,9,8
+    GROUPBOX        "时间",IDC_STATIC,7,7,201,33
+    GROUPBOX        "响铃方式",IDC_STATIC,7,45,202,58
+    CONTROL         "24小时内",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,7,67,48,10
+    CONTROL         "每天",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,7,82,32,10
+    LTEXT           "铃声",IDC_STATIC,82,58,17,8
+    COMBOBOX        IDC_ALARM_SOUND,107,56,48,56,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加闹铃",IDC_ALARM_ADD,157,88,50,14
+    GROUPBOX        "方式",IDC_STATIC,7,57,48,40
+    LISTBOX         IDC_ALARM_SHOW,7,104,219,72,LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | WS_TABSTOP,WS_EX_DLGMODALFRAME
+END
+
+DLG_SPECIAL DIALOGEX 0, 0, 182, 82
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "个性化"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "确定",IDOK,125,61,50,14
+    LTEXT           "整点提醒",IDC_STATIC,15,17,33,8
+    COMBOBOX        IDC_FULL,49,14,48,42,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+DLG_ABOUT DIALOGEX 0, 0, 126, 62
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "万年历时钟   燕东",IDC_ABOUT_STATIC,7,7,109,35,SS_ENDELLIPSIS
+    PUSHBUTTON      "确定",IDOK,33,34,50,14
+END
+
+IDD_DLG_MEM1 DIALOGEX 0, 0, 258, 118
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "纪念日"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COM4,14,30,36,97,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "名称",-1,51,32,21,11
+    COMBOBOX        IDC_COMBO_YEAR1,60,55,40,68,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_MONTH1,115,55,23,136,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DAY1,153,55,23,165,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_MEM1,69,33,107,13,ES_AUTOHSCROLL
+    LTEXT           "年",-1,104,58,9,8
+    LTEXT           "日",-1,180,58,9,8
+    LTEXT           "月",-1,141,58,9,8
+    COMBOBOX        IDC_COM5,15,55,40,74,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COM6,15,86,41,66,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_MINUTE1,117,86,29,135,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_HOUR1,77,86,29,136,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "确认修改",IDC_ADD,207,37,37,52
+    LTEXT           "时",-1,107,89,9,8
+    LTEXT           "分",-1,148,89,9,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DLG_CLOCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_DLG_CALENDAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 332
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_DLG_MEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 247
+    END
+
+    DLG_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    DLG_SPECIAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    DLG_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 119
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DLG_MEM1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "弹出"
+    BEGIN
+        MENUITEM "日历",                          ID_CALENDAR
+        MENUITEM "纪念日",                         ID_MEM
+        MENUITEM "闹铃",                          ID_ALARM
+        MENUITEM "个性化",                         ID_SPECIAL
+        POPUP "换肤"
+        BEGIN
+            MENUITEM "红色",                          ID_RED
+            MENUITEM "蓝色",                          ID_BLUE
+            MENUITEM "黄色",                          ID_YELLOW
+            MENUITEM "绿色",                          ID_GREEN
+        END
+        MENUITEM "设置时间",                        ID_SETUP
+        MENUITEM "关于",                          ID_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                          ID_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "icon1.ico"
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

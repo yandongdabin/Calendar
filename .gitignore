@@ -1,0 +1,7 @@
+/Debug/*
+/Release/*
+/CalendarApp/Debug
+/CalendarApp/Release
+*.aps
+*.user
+*.ncb
