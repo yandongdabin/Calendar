@@ -50,7 +50,7 @@ INT_PTR CALLBACK MemProc(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
 
 		//初始化combo box部分
 		hwnd = GetDlgItem(hDlg,IDC_COMBO_YEAR);//年
-		for(i=2012;i<=2015;i++)
+		for(i=2012;i<=2020;i++)
 		{
 			wsprintf(buffer,_T("%d"),i);
 			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
@@ -150,21 +150,7 @@ INT_PTR CALLBACK MemProc(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
 			SendMessage(hwnd,LB_ADDSTRING,0,(LPARAM)tempname);
 
 		}
-		//(HBITMAP)LoadImage(g_hInst,"../image/skin/a1.bmp",IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
-		
-		//hdcBitmap = CreateCompatibleDC (NULL);
-		/*hdc_Edit = GetDC(hwnd);
-		hdcBitmap = CreateCompatibleDC (hdc_Edit);
-		bitmap = (HBITMAP)LoadImage(g_hInst,"../image/ring.bmp",IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
-		if(NULL == bitmap)
-		{
-			MessageBox(hDlg,"df","df",0);
-		}
-		SelectObject(hdcBitmap,bitmap);
-		BitBlt(hdc_Edit,20,30,10,10,hdcBitmap,0,0,10,10,SRCCOPY);*/
-		//DeleteObject(bitmap);
-		//DeleteDC(hdc_Edit);
-		//DeleteDC(hdcBitmap);
+
 		return FALSE;
 	case WM_COMMAND:
 		{
@@ -231,14 +217,9 @@ INT_PTR CALLBACK MemProc(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
 						}
 						strcat(szResult,temp);
 						strcat(buffer,szResult);
-						//wsprintf(szResult,"\r\ns是否公历%d  年月日%d-%d-%d  是否提醒istell=%d %d-%d\r\n",is_sun,year,month,day,is_tell,hour,minute);
-						//MessageBox(hDlg,buffer,"日历名称",0);
-						//MessageBox(hDlg,szResult,"日历名称",0);
+
 						hwnd = GetDlgItem(hDlg,IDC_MEM_SHOW);
-						//strcat(buffer,szResult);
-						//strcat(szFormer,buffer);
-						//SendMessage(hwnd,WM_SETTEXT,0,(LPARAM)_T("\r\n"));
-						//SendMessage(hwnd,WM_SETTEXT,0,(LPARAM)buffer);
+
 						SendMessage(hwnd,LB_ADDSTRING,0,(LPARAM)buffer);
 						//if(is_tell == 1)
 						//{
@@ -353,62 +334,7 @@ INT_PTR CALLBACK MemProc(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
 				index = SendMessage(hwnd,LB_GETCURSEL,0,0);
 				if(index >0)
 				SendMessage(hwnd,LB_DELETESTRING,(WPARAM)index,0);
-				//sprintf(te1,"%d",memorynum);
-				//sprintf(te2,"%d",index);
-				//strcpy(te1,te2);
-				//MessageBox(hDlg,te2,"s",0);
-/*
-				if(fopen_s(&file,"../setup/mem.ini","r")!=NULL)
-		{
-			exit(0);
-		}
-		while(fgets(_buffer,100,file)!=NULL)
-		{
-			sscanf(_buffer,"%d %d %d %d %d %d %d %s",&cur_memory[memorynum].year,&cur_memory[memorynum].month,&cur_memory[memorynum].day,&cur_memory[memorynum].hour,&cur_memory[memorynum].minute,&cur_memory[memorynum].is_sun,&cur_memory[memorynum].is_tell,cur_memory[memorynum].name);
-			memset(_buffer,0,sizeof(_buffer));
-			//memorynum++;
-			//printf("%d\n",num);
-		}
-		//hwnd = GetDlgItem(hDlg,IDC_MEM_SHOW);
-		fclose(file);
-
-
-
-		
-		
-		fopen_s(&file,"../setup/m.ini","w+");
-				for(i=0;i<memorynum;i++)
-		{
-			strcpy(tempname,cur_memory[i].name);
-			if(cur_memory[i].is_sun)
-			{
-				wsprintf(szResult,"\r\n农历 %d年%d月%d日",cur_memory[i].year,cur_memory[i].month,cur_memory[i].day);
-			}
-			else
-			{
-				wsprintf(szResult,"\r\n公历 %d年%d月%d日",cur_memory[i].year,cur_memory[i].month,cur_memory[i].day);
-			}
-			if(cur_memory[i].is_tell)
-			{
-				wsprintf(temp,"  提醒时间:%d时%d分\r\n",cur_memory[i].hour,cur_memory[i].minute);
-			}
-				else
-			{
-				wsprintf(temp,"  无提醒\r\n");
-			}
-			strcat(szResult,temp);
-			strcat(tempname,szResult);
-			//SendMessage(hwnd,LB_ADDSTRING,0,(LPARAM)tempname);
-			fputs(tempname,file);
-
-		}
-				fclose(file);*/
-
-		
-
-
-
-
+				
 
 				if(fopen_s(&file,"../setup/mem.ini","w+")!=NULL)
 				{
@@ -451,33 +377,6 @@ INT_PTR CALLBACK MemProc(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
 					memorynum--;
 					fclose(file);
 
-		/*fopen_s(&file,"../setup/m.ini","w+");
-		for(i=0;i<memorynum;i++)
-		{
-			strcpy(tempname,cur_memory[i].name);
-			if(cur_memory[i].is_sun)
-			{
-				wsprintf(szResult,"\r\n农历 %d年%d月%d日",cur_memory[i].year,cur_memory[i].month,cur_memory[i].day);
-			}
-			else
-			{
-				wsprintf(szResult,"\r\n公历 %d年%d月%d日",cur_memory[i].year,cur_memory[i].month,cur_memory[i].day);
-			}
-			if(cur_memory[i].is_tell)
-			{
-				wsprintf(temp,"  提醒时间:%d时%d分\r\n",cur_memory[i].hour,cur_memory[i].minute);
-			}
-				else
-			{
-				wsprintf(temp,"  无提醒\r\n");
-			}
-			strcat(szResult,temp);
-			strcat(tempname,szResult);
-			//SendMessage(hwnd,LB_ADDSTRING,0,(LPARAM)tempname);
-			fputs(tempname,file);
-
-		}
-				fclose(file);*/
 
 			}
 		}
@@ -500,109 +399,8 @@ INT_PTR CALLBACK MemProc(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
 
 }
 
-/*INT_PTR CALLBACK MemProc1(HWND hDlg,UINT uMsg,WPARAM wParam,LPARAM lParam)
-{
-	HWND hwnd;
-	SYSTEMTIME Datetime;
-	int i;
-	TCHAR buffer[1000];
-	GetLocalTime(&Datetime);
-	switch(uMsg)
-	{
-	case WM_COMMAND:
-		if(HIWORD(wParam)==BN_CLICKED)
-			{
-				if(LOWORD(wParam)==IDCANCEL)
-					EndDialog(hDlg,0);
-			}
-		break;
-	case WM_INITDIALOG:
-		hwnd = GetDlgItem(hDlg,IDC_COMBO_YEAR1);//年
-		for(i=2012;i<=2015;i++)
-		{
-			wsprintf(buffer,_T("%d"),i);
-			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
-		}
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(0),0);
-		hwnd = GetDlgItem(hDlg,IDC_COMBO_MONTH1);//月
-		for(i=1;i<=12;i++)
-		{
-			wsprintf(buffer,_T("%2d"),i);
-			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
-		}
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(Datetime.wMonth-1),0);
-		hwnd = GetDlgItem(hDlg,IDC_COMBO_DAY1);//日
-		for(i=1;i<=31;i++)
-		{
-			wsprintf(buffer,_T("%2d"),i);
-			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
-		}
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(Datetime.wDay-1),0);
-		hwnd = GetDlgItem(hDlg,IDC_COMBO_HOUR1);//小时
-		
-		for(i=1;i<=24;i++)
-		{
-			wsprintf(buffer,_T("%2d"),i);
-			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
-		}
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(Datetime.wHour-1),0);
-		EnableWindow(hwnd,FALSE);//使小时失效
-		
-		hwnd = GetDlgItem(hDlg,IDC_COMBO_MINUTE1);//分钟
-		for(i=1;i<60;i++)
-		{
-			wsprintf(buffer,_T("%2d"),i);
-			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
-		}
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(Datetime.wMinute-1),0);
-		EnableWindow(hwnd,FALSE);//使分钟失效
-		//hwnd = GetDlgItem(hDlg,IDC_SELECT);
-		//EnableWindow(hwnd,FALSE);//使按钮失效
-		hwnd = GetDlgItem(hDlg,IDC_COM4);
-		//wsprintf(buffer,_T("%2d"),i);
-		SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM)_T("纪念日"));
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(0),0);
-		hwnd = GetDlgItem(hDlg,IDC_COM5);
-		SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM)_T("公历"));
-		SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM)_T("农历"));
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(0),0);
-		hwnd = GetDlgItem(hDlg,IDC_COM6);
-		SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM)_T("提醒开"));
-		SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM)_T("提醒关"));
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(0),0);
 
-
-		hwnd = GetDlgItem(hDlg,IDC_COMBO_MINUTE1);//分钟
-		for(i=1;i<60;i++)
-		{
-			wsprintf(buffer,_T("%2d"),i);
-			SendMessage (hwnd, CB_ADDSTRING, 0,(LPARAM) buffer);
-		}
-		SendMessage(hwnd,CB_SETCURSEL,(WPARAM)(Datetime.wMinute-1),0);
-		 break;
-
-	case WM_LBUTTONDOWN:
-		PostMessage(hDlg,WM_NCLBUTTONDOWN,HTCAPTION,lParam); 
-		break;
-	case WM_PAINT:
-		{
-			PAINTSTRUCT ps;
-			HDC hdc = BeginPaint(hDlg,&ps);
-			UpdateMem(hDlg,hdc);
-			EndPaint(hDlg,&ps);
-		}
-		break;
-	default:
-		return FALSE;
-	}
-	return TRUE;
-}*/
 INT_PTR ShowMemDlg()
 {
 	return DialogBox(g_hInst,MAKEINTRESOURCE(IDD_DLG_MEM),0,MemProc);
 }
-/*
-INT_PTR ShowChangeDlg()
-{
-	return DialogBox(g_hInst,MAKEINTRESOURCE(IDD_DLG_MEM1),0,MemProc1);
-}*/

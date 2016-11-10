@@ -1,21 +1,9 @@
 #include "public.h"
 
-/*
-*********************************************************
-API函数参考：
-	GetLocalTime: 获得当前时间(公历：年、月、日、周)
-	MoveToEx:     移动划线的起点
-	LineTo:       绘制到某一点
-	SetTextColor: 设置要绘制的文字颜色
-	TextOut:      绘制文字
-	GetLocalTime：获得当前系统的本地时间
-结构体类型参考：
-    SYSTEMTIME:   描述时间类型，包括年月日、时分秒、周
-*********************************************************
-*/
 
 
-HINSTANCE g_hInst;//保存操作系统传递进来的"应用程序实例句柄"
+
+HINSTANCE g_hInst;
 unsigned int nCurrentYear=0;
 unsigned int nCurrentMonth=0;
 unsigned int nCurrentDay=0;
@@ -228,28 +216,6 @@ char* GetGanZhi(int nYear)
 	if(temp<=0)temp+=60;
 	return TianGanDizhi[temp-1];
 }
-/*char *GetGanZhiMonth(stDateTime *lunarDay)
-{
-	int temp;
-	temp=lunarDay->nYear%60-3;
-	if(temp<=0)temp+=60;
-	temp %=10;
-	if(temp==1 || temp==6)
-		return TianGanDizhi[3+lunarDay->nMonth-2];
-	else if(temp==2 || temp==7)
-		return TianGanDizhi[15+lunarDay->nMonth-2];
-	else if(temp==3 || temp==8)
-		return TianGanDizhi[27+lunarDay->nMonth-2];
-	else if(temp==4 || temp==9)
-		return TianGanDizhi[39+lunarDay->nMonth-2];
-	else return TianGanDizhi[51+lunarDay->nMonth-2];
-}*/
-
- /*char* GetGanZhi(int nYear)
-{
-	nYear = nYear%60-3;
-	return nYear>0?TianGanDizhi[nYear-1]:TianGanDizhi[nYear+60-1];
-}*/
 
 char *GetGanZhiMonth(int nYear,int nMonth)//公元年份月份
 {	
@@ -279,7 +245,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 }
 
 
-//日历绘制函数,学员自己实现该函数
+
 void DrawCalendar(HDC hDC,int nWidth,int nHeight)
 {
 	stDateTime SunDay,LunarDay;
@@ -477,9 +443,7 @@ void DrawCalendar(HDC hDC,int nWidth,int nHeight)
 	
 }
 
-//事件函数：点击日历界面上各个按钮后被调用,学员自己实现该函数
-//注意：该函数调用完后，系统自动调用DrawCalendar函数
-//      因此，可以理解为，该函数和DrawCalendar函数是联动的
+
 void CalendarButtonEvent(UINT nID)
 {
 	SYSTEMTIME DateTime;
@@ -532,7 +496,7 @@ void CalendarSelChange()
 	nCurrentYear = cur_datetime.year;
 	nCurrentMonth = cur_datetime.month;
 }
-//该函数每0.5秒被调用一次,时钟界面上的文字绘制,学员自己实现该函数
+
 void DrawClockText(HDC hDC)
 {
 	//获得当前系统的本地时间
@@ -685,10 +649,6 @@ void PlayAlarm(HWND hDlg,int index)
 		{
 			exit(0);
 		}
-				//sprintf(te1,"%d",memorynum);
-				//sprintf(te2,"%d",index);
-				//strcpy(te1,te2);
-				//MessageBox(hDlg,te1,"s",0);
 		for(i=1;i<=alarmnum;i++)
 			{
 				if(i<index)

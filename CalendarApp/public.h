@@ -1,7 +1,4 @@
-/************************************************************************/
-/*文件名：public.h                                                      */
-/*作  用：全局公共头文件                                                */
-/************************************************************************/
+
 #pragma once
 #pragma comment(lib, "winmm.lib")
 
@@ -24,15 +21,15 @@
 	int nMonth;
 	int nDay;
 }stDateTime;
-//声名'用于保存应用程序实例的句柄'的变量
+
 extern HINSTANCE g_hInst;
-//声名‘保存主窗口句柄’的变量
+
 extern HWND      g_hMainWnd;
 
 	
 char *GetGanZhiMonth(int ,int);
 char* GetGanZhi(int nYear);
-void CalendarSelChange();//当选项变化的时候
+void CalendarSelChange();
 typedef struct _curDay
 {
 	int year;
